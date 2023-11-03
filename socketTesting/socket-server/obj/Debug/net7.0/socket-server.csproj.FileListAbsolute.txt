@@ -1,0 +1,15 @@
+D:\Programming\Dev\C#\Projects\RandomStuff\socketTesting\socket-server\bin\Debug\net7.0\socket-server.exe
+D:\Programming\Dev\C#\Projects\RandomStuff\socketTesting\socket-server\bin\Debug\net7.0\socket-server.deps.json
+D:\Programming\Dev\C#\Projects\RandomStuff\socketTesting\socket-server\bin\Debug\net7.0\socket-server.runtimeconfig.json
+D:\Programming\Dev\C#\Projects\RandomStuff\socketTesting\socket-server\bin\Debug\net7.0\socket-server.dll
+D:\Programming\Dev\C#\Projects\RandomStuff\socketTesting\socket-server\bin\Debug\net7.0\socket-server.pdb
+D:\Programming\Dev\C#\Projects\RandomStuff\socketTesting\socket-server\obj\Debug\net7.0\socket-server.csproj.AssemblyReference.cache
+D:\Programming\Dev\C#\Projects\RandomStuff\socketTesting\socket-server\obj\Debug\net7.0\socket-server.GeneratedMSBuildEditorConfig.editorconfig
+D:\Programming\Dev\C#\Projects\RandomStuff\socketTesting\socket-server\obj\Debug\net7.0\socket-server.AssemblyInfoInputs.cache
+D:\Programming\Dev\C#\Projects\RandomStuff\socketTesting\socket-server\obj\Debug\net7.0\socket-server.AssemblyInfo.cs
+D:\Programming\Dev\C#\Projects\RandomStuff\socketTesting\socket-server\obj\Debug\net7.0\socket-server.csproj.CoreCompileInputs.cache
+D:\Programming\Dev\C#\Projects\RandomStuff\socketTesting\socket-server\obj\Debug\net7.0\socket-server.dll
+D:\Programming\Dev\C#\Projects\RandomStuff\socketTesting\socket-server\obj\Debug\net7.0\refint\socket-server.dll
+D:\Programming\Dev\C#\Projects\RandomStuff\socketTesting\socket-server\obj\Debug\net7.0\socket-server.pdb
+D:\Programming\Dev\C#\Projects\RandomStuff\socketTesting\socket-server\obj\Debug\net7.0\socket-server.genruntimeconfig.cache
+D:\Programming\Dev\C#\Projects\RandomStuff\socketTesting\socket-server\obj\Debug\net7.0\ref\socket-server.dll
