@@ -72,7 +72,7 @@ async Task RemoveDisconnectedClients()
         if (client.Item2.State != WebSocketState.Open)
         {
             Console.WriteLine("removing client");
-            await BroadCast($"{client.Item1} left the room");
+            await BroadCast($"bg||'server'||'all'||'{client.Item1} left the room'||{DateTime.Now.ToString("h:mm:ss tt")}");
             connections.RemoveAt(i);
         }
     }
@@ -85,7 +85,7 @@ async Task DirectMessage(string message)
     string receiver = parts[2];
     string body = parts[3];
     string time = parts[4];
-    string msg = "dm sent from user" + sender + " :: " + body + " at " + time;
+    string msg = "dm sent from " + sender + " :: " + body + "::" + time;
 
     foreach ((string, WebSocket) client in connections)
     {
@@ -108,7 +108,7 @@ async Task BroadCast(string message)
     string body = parts[3];
     string time = parts[4];
     // string msg = "dm sent from user" + sender + " :: " + body + " at " + time;
-    string msg = sender + " :: " + body + " at " + time;
+    string msg = sender + " :: " + body + "::" + time;
     var bytes = Encoding.UTF8.GetBytes(msg);
     foreach ((string, WebSocket) client in connections)
     {

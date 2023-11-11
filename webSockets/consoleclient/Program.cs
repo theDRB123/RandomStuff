@@ -3,6 +3,7 @@ using System.Drawing;
 using System.Net.WebSockets;
 using System.Text;
 using System.Text.RegularExpressions;
+using Microsoft.VisualBasic;
 
 
 ClientWebSocket ws = new();
@@ -12,7 +13,10 @@ Dictionary<int, (ConsoleColor, ConsoleColor)> theme = new(){
     {1 , (ConsoleColor.Black , ConsoleColor.DarkBlue)},
     {2 , (ConsoleColor.White , ConsoleColor.Black)},
     {3 , (ConsoleColor.Red , ConsoleColor.Black)},
-    {4 , (ConsoleColor.Black , ConsoleColor.DarkRed)}
+    {4 , (ConsoleColor.Black , ConsoleColor.DarkRed)},
+    {5 , (ConsoleColor.Green , ConsoleColor.Black)},
+    {6 , (ConsoleColor.Cyan , ConsoleColor.Black) },
+    {7 , (ConsoleColor.Yellow , ConsoleColor.Black)}
 };
 
 void changeTheme(int key)
@@ -21,19 +25,22 @@ void changeTheme(int key)
     Console.BackgroundColor = theme[key].Item2;
 }
 
-string name;
+string? name;
 
 changeTheme(1);
 Console.Write("Enter your userName :");
-changeTheme(4);
+changeTheme(3);
 name = Console.ReadLine();
 changeTheme(0);
 
-Console.WriteLine("Connecting to the server ...");
-changeTheme(0);
-await ws.ConnectAsync(new Uri($"ws://localhost:4000/ws?name={name}"), CancellationToken.None);
-Console.WriteLine("Connected...");
 
+changeTheme(2);
+Console.WriteLine("Connecting to the server ...");
+changeTheme(5);
+await ws.ConnectAsync(new Uri($"ws://localhost:4000/ws?name={name}"), CancellationToken.None);
+
+Console.WriteLine("Connected...");
+changeTheme(0);
 static void ClearCurrentConsoleLine()
 {
     int currentLineCursor = Console.CursorTop;
@@ -55,7 +62,31 @@ Task receiveTask = Task.Run(async () =>
         }
         var message = Encoding.UTF8.GetString(buffer, 0, result.Count);//result holds the length of the returned buffer
 
-        Console.WriteLine(message);
+        //message format = sender :: message at time
+        string[] parts = message.Split("::");
+
+        if (parts[0] == "server")
+        {
+            changeTheme(3);
+            Console.Write(parts[0]);
+            changeTheme(0);
+        }
+        else
+        {
+            changeTheme(5);
+            Console.Write(parts[0]);
+            changeTheme(0);
+        }
+        changeTheme(6);
+        Console.Write("::");
+        changeTheme(0);
+        Console.Write(parts[1]);
+        changeTheme(7);
+        Console.Write(" at ");
+        changeTheme(2);
+        Console.Write(parts[2]);
+        changeTheme(0);
+        Console.WriteLine(" ");
     }
 });
 
@@ -73,26 +104,26 @@ Task sendTask = Task.Run(async () =>
         if (Regex.IsMatch(message, "^dm"))
         {
             //input format = dm || receiver || message
-            string[] parts = message.Split(' ');
-            if (parts.Length < 3)
-            {
-                Console.WriteLine("Invalid format");
-                continue;
-            }
+            message = message.Replace("dm ", "");
+            string[] parts = message.Split(" ");
+            var receiver = parts[0];
+            var msg = message.Replace(receiver, "");
+            message = "dm" + "||" + name + "||" + receiver + "||" + msg + "||" + DateTime.Now.ToString("hh:mm tt");
 
-            message = "dm" + "||" + name + "||" + parts[1] + "||" + parts[2] + "||" + DateTime.Now.ToString("hh:mm tt");
         }
         else if (Regex.IsMatch("^bd", message))
         {
             //input format = bd  message
-            string[] parts = message.Split(' ');
+            string[] parts = message.Split('_');
             string msg = parts[1];
-            message = "bd" + "||" + name + "||" + "all"  + "||" +  msg + "||" + DateTime.Now.ToString("hh:mm tt");
+            message = "bd" + "||" + name + "||" + "all" + "||" + msg + "||" + DateTime.Now.ToString("hh:mm tt");
 
-        }else {
+        }
+        else
+        {
             ClearCurrentConsoleLine();
             Console.WriteLine("bd " + message);
-            message = "bd" + "||" + name + "||" + "all"  + "||" +  message + "||" + DateTime.Now.ToString("hh:mm tt");
+            message = "bd" + "||" + name + "||" + "all" + "||" + message + "||" + DateTime.Now.ToString("hh:mm tt");
         }
 
         var bytes = Encoding.UTF8.GetBytes(message);
@@ -100,7 +131,8 @@ Task sendTask = Task.Run(async () =>
         {
             await ws.SendAsync(new ArraySegment<byte>(bytes, 0, bytes.Length), WebSocketMessageType.Text, true, CancellationToken.None);
 
-        }catch(Exception e)
+        }
+        catch (Exception e)
         {
             Console.WriteLine(e.Message);
         }
