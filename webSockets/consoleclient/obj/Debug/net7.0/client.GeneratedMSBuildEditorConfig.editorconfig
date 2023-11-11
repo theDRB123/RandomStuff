@@ -8,4 +8,4 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = client
-build_property.ProjectDir = D:\Programming\Dev\C#\Projects\RandomStuffinC#\webSockets\consoleclient\
+build_property.ProjectDir = d:\Programming\Dev\C#\Projects\RandomStuffinC#\webSockets\consoleclient\
