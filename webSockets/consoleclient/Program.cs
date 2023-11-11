@@ -84,15 +84,15 @@ Task sendTask = Task.Run(async () =>
         }
         else if (Regex.IsMatch("^bd", message))
         {
-            string pattern = "\"(.*?)\"";
-            MatchCollection matches = Regex.Matches(message, pattern);
-            if (matches.Count == 0)
-            {
-                Console.WriteLine("Invalid format");
-                continue;
-            }
-            string msg = matches[0].Groups[0].Value;
-            message = "bd" + "||" + name + "||" + msg + "||" + DateTime.Now.ToString();
+            //input format = bd  message
+            string[] parts = message.Split(' ');
+            string msg = parts[1];
+            message = "bd" + "||" + name + "||" + "all"  + "||" +  msg + "||" + DateTime.Now.ToString("hh:mm tt");
+
+        }else {
+            ClearCurrentConsoleLine();
+            Console.WriteLine("bd " + message);
+            message = "bd" + "||" + name + "||" + "all"  + "||" +  message + "||" + DateTime.Now.ToString("hh:mm tt");
         }
 
         var bytes = Encoding.UTF8.GetBytes(message);

@@ -11,7 +11,7 @@ var app = builder.Build();
 app.UseWebSockets();
 
 // List<WebSocket> connections = new();
-List<(string, WebSocket)> connections = new() { };
+List<(string, WebSocket)> connections = new();
 
 app.Map("/ws", async context =>
 {
@@ -23,10 +23,9 @@ app.Map("/ws", async context =>
 
         connections.Add((clientName, ws));
 
-        await BroadCast($"{clientName} joined the room");
-        await BroadCast($"{connections.Count} users are connected..");
-        //this is the recieve message task running for the current client
-        await ReceiveMessage(ws , clientName);
+        await BroadCast($"bg||'server'||'all'||'{clientName} joined the room'||{DateTime.Now.ToString("h:mm:ss tt")}");
+        await BroadCast($"bg||'server'||'all'||' {connections.Count} users are connected..'||{DateTime.Now.ToString("h:mm:ss tt")}");
+        await ReceiveMessage(ws, clientName);
     }
     else
     {
@@ -34,7 +33,7 @@ app.Map("/ws", async context =>
     }
 });
 
-async Task ReceiveMessage(WebSocket client , string clientName)
+async Task ReceiveMessage(WebSocket client, string clientName)
 {
     var buffer = new byte[1024 * 4];
     while (client.State == WebSocketState.Open)
@@ -52,13 +51,8 @@ async Task ReceiveMessage(WebSocket client , string clientName)
             else if (new Regex("^bd").IsMatch(message))
             {
                 //broadcast
-                await BroadCast( clientName + ":" + message);
+                await BroadCast(message);
             }
-            else if (new Regex("^ud").IsMatch(message))
-            {
-                //user disconnected
-            }
-            
         }
         catch (WebSocketException ex)
         {
@@ -66,8 +60,6 @@ async Task ReceiveMessage(WebSocket client , string clientName)
             RemoveDisconnectedClients();
             break;
         }
-
-
     }
 }
 
@@ -109,7 +101,15 @@ async Task DirectMessage(string message)
 
 async Task BroadCast(string message)
 {
-    var bytes = Encoding.UTF8.GetBytes(message);
+    //format bd||sender||receiver||message||datetime 
+    string[] parts = message.Split("||");
+    string sender = parts[1];
+    string receiver = parts[2];
+    string body = parts[3];
+    string time = parts[4];
+    // string msg = "dm sent from user" + sender + " :: " + body + " at " + time;
+    string msg = sender + " :: " + body + " at " + time;
+    var bytes = Encoding.UTF8.GetBytes(msg);
     foreach ((string, WebSocket) client in connections)
     {
         if (client.Item2.State == WebSocketState.Open)
