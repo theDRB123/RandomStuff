@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "yB9w4qxEx33U/l2zyKA67DPwnYXluautaUC+0ujQL7ZGwrJqa4H/e8pK9QLG5/TEWpR9bPChQbQyQ0+ue3X1aQ==",
+  "dgSpecHash": "3JYAqGHzUscS8XFsqP+DERR5mn9yHKTk95gl2bLxej1/2ZZeCxmGagKtkMpFOEjGWEUa4LjO0uMUOAnckgafgg==",
   "success": true,
-  "projectFilePath": "D:\\Programming\\Dev\\C#\\Projects\\RandomStuff\\socketTesting\\socket-server\\socket-server.csproj",
+  "projectFilePath": "D:\\Programming\\Dev\\C#\\Projects\\RandomStuffinC#\\socketTesting\\socket-server\\socket-server.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

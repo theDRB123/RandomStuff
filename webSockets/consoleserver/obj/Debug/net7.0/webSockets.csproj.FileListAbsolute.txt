@@ -1,0 +1,15 @@
+D:\Programming\Dev\C#\Projects\RandomStuffinC#\webSockets\server\bin\Debug\net7.0\webSockets.exe
+D:\Programming\Dev\C#\Projects\RandomStuffinC#\webSockets\server\bin\Debug\net7.0\webSockets.deps.json
+D:\Programming\Dev\C#\Projects\RandomStuffinC#\webSockets\server\bin\Debug\net7.0\webSockets.runtimeconfig.json
+D:\Programming\Dev\C#\Projects\RandomStuffinC#\webSockets\server\bin\Debug\net7.0\webSockets.dll
+D:\Programming\Dev\C#\Projects\RandomStuffinC#\webSockets\server\bin\Debug\net7.0\webSockets.pdb
+D:\Programming\Dev\C#\Projects\RandomStuffinC#\webSockets\server\obj\Debug\net7.0\webSockets.csproj.AssemblyReference.cache
+D:\Programming\Dev\C#\Projects\RandomStuffinC#\webSockets\server\obj\Debug\net7.0\webSockets.GeneratedMSBuildEditorConfig.editorconfig
+D:\Programming\Dev\C#\Projects\RandomStuffinC#\webSockets\server\obj\Debug\net7.0\webSockets.AssemblyInfoInputs.cache
+D:\Programming\Dev\C#\Projects\RandomStuffinC#\webSockets\server\obj\Debug\net7.0\webSockets.AssemblyInfo.cs
+D:\Programming\Dev\C#\Projects\RandomStuffinC#\webSockets\server\obj\Debug\net7.0\webSockets.csproj.CoreCompileInputs.cache
+D:\Programming\Dev\C#\Projects\RandomStuffinC#\webSockets\server\obj\Debug\net7.0\webSockets.dll
+D:\Programming\Dev\C#\Projects\RandomStuffinC#\webSockets\server\obj\Debug\net7.0\refint\webSockets.dll
+D:\Programming\Dev\C#\Projects\RandomStuffinC#\webSockets\server\obj\Debug\net7.0\webSockets.pdb
+D:\Programming\Dev\C#\Projects\RandomStuffinC#\webSockets\server\obj\Debug\net7.0\webSockets.genruntimeconfig.cache
+D:\Programming\Dev\C#\Projects\RandomStuffinC#\webSockets\server\obj\Debug\net7.0\ref\webSockets.dll

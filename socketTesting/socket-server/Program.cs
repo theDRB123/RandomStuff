@@ -53,7 +53,9 @@ class Program
                 }
                 buffer = Encoding.UTF8.GetBytes(response.ToUpper(), 0, recieved);
                 await client.SendAsync(buffer, SocketFlags.None);
+                
             }
+
         }
     }
 

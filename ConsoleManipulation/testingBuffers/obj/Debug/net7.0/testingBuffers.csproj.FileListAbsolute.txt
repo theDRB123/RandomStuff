@@ -1,0 +1,15 @@
+D:\Programming\Dev\C#\Projects\RandomStuffinC#\ConsoleManipulation\testingBuffers\bin\Debug\net7.0\testingBuffers.exe
+D:\Programming\Dev\C#\Projects\RandomStuffinC#\ConsoleManipulation\testingBuffers\bin\Debug\net7.0\testingBuffers.deps.json
+D:\Programming\Dev\C#\Projects\RandomStuffinC#\ConsoleManipulation\testingBuffers\bin\Debug\net7.0\testingBuffers.runtimeconfig.json
+D:\Programming\Dev\C#\Projects\RandomStuffinC#\ConsoleManipulation\testingBuffers\bin\Debug\net7.0\testingBuffers.dll
+D:\Programming\Dev\C#\Projects\RandomStuffinC#\ConsoleManipulation\testingBuffers\bin\Debug\net7.0\testingBuffers.pdb
+D:\Programming\Dev\C#\Projects\RandomStuffinC#\ConsoleManipulation\testingBuffers\obj\Debug\net7.0\testingBuffers.csproj.AssemblyReference.cache
+D:\Programming\Dev\C#\Projects\RandomStuffinC#\ConsoleManipulation\testingBuffers\obj\Debug\net7.0\testingBuffers.GeneratedMSBuildEditorConfig.editorconfig
+D:\Programming\Dev\C#\Projects\RandomStuffinC#\ConsoleManipulation\testingBuffers\obj\Debug\net7.0\testingBuffers.AssemblyInfoInputs.cache
+D:\Programming\Dev\C#\Projects\RandomStuffinC#\ConsoleManipulation\testingBuffers\obj\Debug\net7.0\testingBuffers.AssemblyInfo.cs
+D:\Programming\Dev\C#\Projects\RandomStuffinC#\ConsoleManipulation\testingBuffers\obj\Debug\net7.0\testingBuffers.csproj.CoreCompileInputs.cache
+D:\Programming\Dev\C#\Projects\RandomStuffinC#\ConsoleManipulation\testingBuffers\obj\Debug\net7.0\testingBuffers.dll
+D:\Programming\Dev\C#\Projects\RandomStuffinC#\ConsoleManipulation\testingBuffers\obj\Debug\net7.0\refint\testingBuffers.dll
+D:\Programming\Dev\C#\Projects\RandomStuffinC#\ConsoleManipulation\testingBuffers\obj\Debug\net7.0\testingBuffers.pdb
+D:\Programming\Dev\C#\Projects\RandomStuffinC#\ConsoleManipulation\testingBuffers\obj\Debug\net7.0\testingBuffers.genruntimeconfig.cache
+D:\Programming\Dev\C#\Projects\RandomStuffinC#\ConsoleManipulation\testingBuffers\obj\Debug\net7.0\ref\testingBuffers.dll

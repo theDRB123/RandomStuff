@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Programming\\Dev\\C#\\Projects\\RandomStuff\\socketTesting\\socket-client\\socket-client.csproj",
+      "projectUniqueName": "D:\\Programming\\Dev\\C#\\Projects\\RandomStuffinC#\\socketTesting\\socket-client\\socket-client.csproj",
       "projectName": "socket-client",
-      "projectPath": "D:\\Programming\\Dev\\C#\\Projects\\RandomStuff\\socketTesting\\socket-client\\socket-client.csproj",
+      "projectPath": "D:\\Programming\\Dev\\C#\\Projects\\RandomStuffinC#\\socketTesting\\socket-client\\socket-client.csproj",
       "packagesPath": "C:\\Users\\dhrbh\\.nuget\\packages\\",
-      "outputPath": "D:\\Programming\\Dev\\C#\\Projects\\RandomStuff\\socketTesting\\socket-client\\obj\\",
+      "outputPath": "D:\\Programming\\Dev\\C#\\Projects\\RandomStuffinC#\\socketTesting\\socket-client\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

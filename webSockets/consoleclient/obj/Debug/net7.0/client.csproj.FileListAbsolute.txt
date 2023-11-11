@@ -1,0 +1,15 @@
+D:\Programming\Dev\C#\Projects\RandomStuffinC#\webSockets\consoleclient\bin\Debug\net7.0\client.exe
+D:\Programming\Dev\C#\Projects\RandomStuffinC#\webSockets\consoleclient\bin\Debug\net7.0\client.deps.json
+D:\Programming\Dev\C#\Projects\RandomStuffinC#\webSockets\consoleclient\bin\Debug\net7.0\client.runtimeconfig.json
+D:\Programming\Dev\C#\Projects\RandomStuffinC#\webSockets\consoleclient\bin\Debug\net7.0\client.dll
+D:\Programming\Dev\C#\Projects\RandomStuffinC#\webSockets\consoleclient\bin\Debug\net7.0\client.pdb
+D:\Programming\Dev\C#\Projects\RandomStuffinC#\webSockets\consoleclient\obj\Debug\net7.0\client.csproj.AssemblyReference.cache
+D:\Programming\Dev\C#\Projects\RandomStuffinC#\webSockets\consoleclient\obj\Debug\net7.0\client.GeneratedMSBuildEditorConfig.editorconfig
+D:\Programming\Dev\C#\Projects\RandomStuffinC#\webSockets\consoleclient\obj\Debug\net7.0\client.AssemblyInfoInputs.cache
+D:\Programming\Dev\C#\Projects\RandomStuffinC#\webSockets\consoleclient\obj\Debug\net7.0\client.AssemblyInfo.cs
+D:\Programming\Dev\C#\Projects\RandomStuffinC#\webSockets\consoleclient\obj\Debug\net7.0\client.csproj.CoreCompileInputs.cache
+D:\Programming\Dev\C#\Projects\RandomStuffinC#\webSockets\consoleclient\obj\Debug\net7.0\client.dll
+D:\Programming\Dev\C#\Projects\RandomStuffinC#\webSockets\consoleclient\obj\Debug\net7.0\refint\client.dll
+D:\Programming\Dev\C#\Projects\RandomStuffinC#\webSockets\consoleclient\obj\Debug\net7.0\client.pdb
+D:\Programming\Dev\C#\Projects\RandomStuffinC#\webSockets\consoleclient\obj\Debug\net7.0\client.genruntimeconfig.cache
+D:\Programming\Dev\C#\Projects\RandomStuffinC#\webSockets\consoleclient\obj\Debug\net7.0\ref\client.dll

@@ -7,6 +7,7 @@ class Program
 {
     static async Task Main(string[] args)
     {
+        
         IPHostEntry ipHostInfo = await Dns.GetHostEntryAsync(Dns.GetHostName());
         IPAddress ipAddress = ipHostInfo.AddressList[0];
         IPEndPoint iPEndPoint = new(ipAddress, 5000);
