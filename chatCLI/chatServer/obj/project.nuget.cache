@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "iLcs/aBfm7gGxd4CRXnTdmeoSRLtyH5z3WTSF5lHaz+m92IznX1btL1WvIxnYeC+pCA8SkaFVg2hpEUm3I6QeQ==",
+  "dgSpecHash": "njqLBVsqG3KQo4eEi6/Ltelj4+VQiOBzqvnaqTsO98gu7QMRfZjmgWF8hPxIIRb7Clbjdw9TWgVJhJ1qC+yKpA==",
   "success": true,
-  "projectFilePath": "D:\\Programming\\Dev\\C#\\Projects\\RandomStuffinC#\\webSockets\\chatServer\\chatServer.csproj",
+  "projectFilePath": "D:\\Programming\\Dev\\C#\\Projects\\RandomStuffinC#\\chatCLI\\chatServer\\chatServer.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

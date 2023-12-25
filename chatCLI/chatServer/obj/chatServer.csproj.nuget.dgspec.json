@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Programming\\Dev\\C#\\Projects\\RandomStuffinC#\\webSockets\\chatServer\\chatServer.csproj": {}
+    "D:\\Programming\\Dev\\C#\\Projects\\RandomStuffinC#\\chatCLI\\chatServer\\chatServer.csproj": {}
   },
   "projects": {
-    "D:\\Programming\\Dev\\C#\\Projects\\RandomStuffinC#\\webSockets\\chatServer\\chatServer.csproj": {
+    "D:\\Programming\\Dev\\C#\\Projects\\RandomStuffinC#\\chatCLI\\chatServer\\chatServer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Programming\\Dev\\C#\\Projects\\RandomStuffinC#\\webSockets\\chatServer\\chatServer.csproj",
+        "projectUniqueName": "D:\\Programming\\Dev\\C#\\Projects\\RandomStuffinC#\\chatCLI\\chatServer\\chatServer.csproj",
         "projectName": "chatServer",
-        "projectPath": "D:\\Programming\\Dev\\C#\\Projects\\RandomStuffinC#\\webSockets\\chatServer\\chatServer.csproj",
+        "projectPath": "D:\\Programming\\Dev\\C#\\Projects\\RandomStuffinC#\\chatCLI\\chatServer\\chatServer.csproj",
         "packagesPath": "C:\\Users\\dhrbh\\.nuget\\packages\\",
-        "outputPath": "D:\\Programming\\Dev\\C#\\Projects\\RandomStuffinC#\\webSockets\\chatServer\\obj\\",
+        "outputPath": "D:\\Programming\\Dev\\C#\\Projects\\RandomStuffinC#\\chatCLI\\chatServer\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -27,7 +27,8 @@
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "C:\\Program Files\\dotnet\\library-packs": {},
-          "C:\\Program Files\\dotnet\\sdk\\7.0.306\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
+          "C:\\Users\\dhrbh\\AppData\\Roaming\\NuGet\\Octokit": {},
+          "C:\\Users\\dhrbh\\AppData\\Roaming\\NuGet\\list": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -64,7 +65,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -6,6 +6,10 @@ using System.Text.RegularExpressions;
 using Microsoft.VisualBasic;
 
 
+int[] array = new int[5];
+Console.WriteLine(array.Length);
+
+
 ClientWebSocket ws = new();
 
 Dictionary<int, (ConsoleColor, ConsoleColor)> theme = new(){
