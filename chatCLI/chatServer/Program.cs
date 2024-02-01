@@ -4,6 +4,8 @@ using System.Net.WebSockets;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Net.NetworkInformation;
+using System.Diagnostics;
 
 var builder = WebApplication.CreateBuilder(args);
 // builder.WebHost.UseUrls("Http://localhost:4000");
@@ -129,6 +131,30 @@ async Task BroadCast(string message)
         }
     }
 }
+async Task GetNetworkComputers()
+{
+    for (int i = 1; i <= 255; i++)
+    {
+        string ipAddress = $"172.27.75.{i}"; // Replace with your subnet
+        using var ping = new Ping();
+        var reply = await ping.SendPingAsync(ipAddress, 100);
+        if (reply.Status == IPStatus.Success)
+        {
+            try
+            {
+                string hostname = Dns.GetHostEntry(ipAddress).HostName;
+                Console.WriteLine($"IP Address: {ipAddress}, Hostname: {hostname}");
+            }
+            catch (SocketException)
+            {
+                // Reverse DNS lookup failed
+                Console.WriteLine($"IP Address: {ipAddress}, Hostname: Unknown");
+            }
+        }
+    }
+}
 
+// await GetNetworkComputers();
+// GetNetworkComputers();
 await app.RunAsync();
 

@@ -18,7 +18,6 @@ D:\Programming\Dev\C#\Projects\RandomStuffinC#\chatCLI\chatClient\bin\Debug\net7
 D:\Programming\Dev\C#\Projects\RandomStuffinC#\chatCLI\chatClient\bin\Debug\net7.0\chatClient.runtimeconfig.json
 D:\Programming\Dev\C#\Projects\RandomStuffinC#\chatCLI\chatClient\bin\Debug\net7.0\chatClient.dll
 D:\Programming\Dev\C#\Projects\RandomStuffinC#\chatCLI\chatClient\bin\Debug\net7.0\chatClient.pdb
-D:\Programming\Dev\C#\Projects\RandomStuffinC#\chatCLI\chatClient\obj\Debug\net7.0\chatClient.csproj.AssemblyReference.cache
 D:\Programming\Dev\C#\Projects\RandomStuffinC#\chatCLI\chatClient\obj\Debug\net7.0\chatClient.GeneratedMSBuildEditorConfig.editorconfig
 D:\Programming\Dev\C#\Projects\RandomStuffinC#\chatCLI\chatClient\obj\Debug\net7.0\chatClient.AssemblyInfoInputs.cache
 D:\Programming\Dev\C#\Projects\RandomStuffinC#\chatCLI\chatClient\obj\Debug\net7.0\chatClient.AssemblyInfo.cs
@@ -28,3 +27,4 @@ D:\Programming\Dev\C#\Projects\RandomStuffinC#\chatCLI\chatClient\obj\Debug\net7
 D:\Programming\Dev\C#\Projects\RandomStuffinC#\chatCLI\chatClient\obj\Debug\net7.0\chatClient.pdb
 D:\Programming\Dev\C#\Projects\RandomStuffinC#\chatCLI\chatClient\obj\Debug\net7.0\chatClient.genruntimeconfig.cache
 D:\Programming\Dev\C#\Projects\RandomStuffinC#\chatCLI\chatClient\obj\Debug\net7.0\ref\chatClient.dll
+D:\Programming\Dev\C#\Projects\RandomStuffinC#\chatCLI\chatClient\obj\Debug\net7.0\chatClient.sourcelink.json

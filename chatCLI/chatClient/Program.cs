@@ -41,7 +41,7 @@ changeTheme(0);
 changeTheme(2);
 Console.WriteLine("Connecting to the server ...");
 changeTheme(5);
-await ws.ConnectAsync(new Uri($"ws://localhost:4000/ws?name={name}"), CancellationToken.None);
+await ws.ConnectAsync(new Uri($"ws://10.42.0.1:4000/ws?name={name}"), CancellationToken.None);
 
 Console.WriteLine("Connected...");
 changeTheme(0);
