@@ -6,7 +6,8 @@ using System.Text;
 using System.Text.RegularExpressions;
 
 var builder = WebApplication.CreateBuilder(args);
-builder.WebHost.UseUrls("Http://localhost:4000");
+// builder.WebHost.UseUrls("Http://localhost:4000");
+builder.WebHost.UseUrls("Http://*:4000");
 var app = builder.Build();
 app.UseWebSockets();
 
