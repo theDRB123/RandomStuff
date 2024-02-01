@@ -13,22 +13,23 @@ builder.WebHost.UseUrls("Http://*:4000");
 var app = builder.Build();
 app.UseWebSockets();
 
-// List<WebSocket> connections = new();
-List<(string, WebSocket)> connections = new();
+List<(string,IPAddress, WebSocket)> connections = new();
 
 app.Map("/ws", async context =>
 {
     if (context.WebSockets.IsWebSocketRequest)
     {
         string? clientName = context.Request.Query["name"];
-
+        IPAddress? ip = context.Connection.RemoteIpAddress;
+        var client = connections.Find(x => x.Item1 == clientName);
         using var ws = await context.WebSockets.AcceptWebSocketAsync();
+      
+        connections.Add((clientName,ip,ws));
+        
 
-        connections.Add((clientName, ws));
-
-        await BroadCast($"bg||server||'all'||{clientName} joined the room||{DateTime.Now.ToString("h:mm:ss tt")}");
+        await BroadCast($"bg||server||'all'||{clientName + ip.ToString()} joined the room||{DateTime.Now.ToString("h:mm:ss tt")}");
         await BroadCast($"bg||server||'all'||{connections.Count} users are connected..||{DateTime.Now.ToString("h:mm:ss tt")}");
-        await ReceiveMessage(ws, clientName);
+        await ReceiveMessage(ws,ip);
     }
     else
     {
@@ -36,12 +37,11 @@ app.Map("/ws", async context =>
     }
 });
 
-async Task ReceiveMessage(WebSocket client, string clientName)
+async Task ReceiveMessage(WebSocket client, IPAddress ip)
 {
     var buffer = new byte[1024 * 4];
     while (client.State == WebSocketState.Open)
     {
-        ;
         try
         {
             var result = await client.ReceiveAsync(new ArraySegment<byte>(buffer), CancellationToken.None);
@@ -66,13 +66,12 @@ async Task ReceiveMessage(WebSocket client, string clientName)
     }
 }
 
-
 async Task RemoveDisconnectedClients()
 {
     for (int i = connections.Count - 1; i >= 0; i--)
     {
         var client = connections[i];
-        if (client.Item2.State != WebSocketState.Open)
+        if (client.Item3.State != WebSocketState.Open)
         {
             Console.WriteLine("removing client");
             await BroadCast($"bg||server||'all'||'{client.Item1} left the room'||{DateTime.Now.ToString("h:mm:ss tt")}");
@@ -90,13 +89,13 @@ async Task DirectMessage(string message)
     string time = parts[4];
     string msg = "dm sent from " + sender + "::" + body + "::" + time;
 
-    foreach ((string, WebSocket) client in connections)
+    foreach ((string,IPAddress,WebSocket) client in connections)
     {
         if (client.Item1 == receiver)
         {
             //send the message
             var arraySegment = new ArraySegment<byte>(Encoding.UTF8.GetBytes(msg), 0, Encoding.UTF8.GetBytes(msg).Length);
-            await client.Item2.SendAsync(arraySegment, WebSocketMessageType.Text, true, CancellationToken.None);
+            await client.Item3.SendAsync(arraySegment, WebSocketMessageType.Text, true, CancellationToken.None);
             Console.WriteLine("dm sent to user :- " + receiver + "from user:- " + sender);
         }
     }
@@ -113,48 +112,24 @@ async Task BroadCast(string message)
     // string msg = "dm sent from user" + sender + " :: " + body + " at " + time;
     string msg = sender + "::" + body + "::" + time;
     var bytes = Encoding.UTF8.GetBytes(msg);
-    foreach ((string, WebSocket) client in connections)
+    foreach ((string,IPAddress, WebSocket) client in connections)
     {
-        if (client.Item2.State == WebSocketState.Open)
+        if (client.Item3.State == WebSocketState.Open & !(client.Item1 == sender))
         {
             var arraySegment = new ArraySegment<byte>(bytes, 0, bytes.Length);
             try
             {
-                await client.Item2.SendAsync(arraySegment, WebSocketMessageType.Text, true, CancellationToken.None);
+                await client.Item3.SendAsync(arraySegment, WebSocketMessageType.Text, true, CancellationToken.None);
             }
             catch (WebSocketException ex)
             {
                 Console.WriteLine("client disconnected");
-                RemoveDisconnectedClients();
+                await RemoveDisconnectedClients();
                 break;
             }
         }
     }
 }
-async Task GetNetworkComputers()
-{
-    for (int i = 1; i <= 255; i++)
-    {
-        string ipAddress = $"172.27.75.{i}"; // Replace with your subnet
-        using var ping = new Ping();
-        var reply = await ping.SendPingAsync(ipAddress, 100);
-        if (reply.Status == IPStatus.Success)
-        {
-            try
-            {
-                string hostname = Dns.GetHostEntry(ipAddress).HostName;
-                Console.WriteLine($"IP Address: {ipAddress}, Hostname: {hostname}");
-            }
-            catch (SocketException)
-            {
-                // Reverse DNS lookup failed
-                Console.WriteLine($"IP Address: {ipAddress}, Hostname: Unknown");
-            }
-        }
-    }
-}
 
-// await GetNetworkComputers();
-// GetNetworkComputers();
 await app.RunAsync();
 
