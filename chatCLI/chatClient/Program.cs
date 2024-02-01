@@ -16,13 +16,19 @@ public class Program
 
         string? name;
 
+        TextUtil.Write("ServerIP [localhost valid] ::", 1);
+        TextUtil.changeTheme(3);
+        string? ip = Console.ReadLine();
+        TextUtil.changeTheme(0);
+        Console.WriteLine("");
+
         TextUtil.Write("Enter your userName :", 1);
         TextUtil.changeTheme(3);
         name = Console.ReadLine();
         TextUtil.changeTheme(0);
 
         TextUtil.WriteLine("Connecting to the server ...", 2);
-        await ws.ConnectAsync(new Uri($"ws://10.42.0.1:4000/ws?name={name}"), CancellationToken.None);
+        await ws.ConnectAsync(new Uri($"ws://{ip}:4000/ws?name={name}"), CancellationToken.None);
         TextUtil.WriteLine("Connected...", 5);
 
         Task receiveTask = Task.Run(async () =>
