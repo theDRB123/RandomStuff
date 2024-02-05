@@ -19,11 +19,12 @@ public class ConsoleUtils()
                 window.DrawWindow();
                 window.DrawText();
             }
+            Console.ForegroundColor = ConsoleColor.Gray;
+            Console.BackgroundColor = ConsoleColor.Black;
         }
     }
     public class ConsoleWindow(int xpos, int ypos, int width, int height)
     {
-        //window will have a border and a text area;
         private readonly int xpos = xpos;
         private readonly int ypos = ypos;
         private readonly int width = width;
@@ -128,10 +129,6 @@ public class ConsoleUtils()
                 TextUtil.WriteFormatParsed(textBuffer[i + offset]);
                 Console.SetCursorPosition(textBuffer[i + offset].Length, ypos + 1 + i);
             }
-            // Console.SetCursorPosition(0, ypos + height + 1);
         }
     }
-
-
-
 }

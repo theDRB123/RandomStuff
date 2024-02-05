@@ -122,6 +122,7 @@ static async Task Main()
     {
         string input = Console.ReadLine();
         serverInfoExtra.AddText(input);
+        serverInfoExtra.ScrollBuffer(1);
         infoPage.DrawWindows();
     }
     Console.ReadLine();
