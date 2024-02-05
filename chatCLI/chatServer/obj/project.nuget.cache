@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "33Bhg1/9Nin/aLJSWggqnYBgeFwZMVAgcarzRU1GNbzysSWjUSK0BbTT1nMWkXcIWUHpTEjBdKr3zB1T6TSlhA==",
+  "dgSpecHash": "hB+NMcbRcsyJjQ08F7eIY0/8o2rK8HratfVKs3AfQXFEp0GY8u+drDoZHq85hLZ2AxYhNCtqOw/RJNpZ1RplXA==",
   "success": true,
   "projectFilePath": "D:\\Programming\\Dev\\C#\\Projects\\RandomStuffinC#\\chatCLI\\chatServer\\chatServer.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\dhrbh\\.nuget\\packages\\microsoft.dotnet.ilcompiler\\7.0.15\\microsoft.dotnet.ilcompiler.7.0.15.nupkg.sha512",
+    "C:\\Users\\dhrbh\\.nuget\\packages\\microsoft.net.illink.analyzers\\7.0.100-1.23211.1\\microsoft.net.illink.analyzers.7.0.100-1.23211.1.nupkg.sha512",
+    "C:\\Users\\dhrbh\\.nuget\\packages\\microsoft.net.illink.tasks\\7.0.100-1.23211.1\\microsoft.net.illink.tasks.7.0.100-1.23211.1.nupkg.sha512",
+    "C:\\Users\\dhrbh\\.nuget\\packages\\runtime.win-x64.microsoft.dotnet.ilcompiler\\7.0.15\\runtime.win-x64.microsoft.dotnet.ilcompiler.7.0.15.nupkg.sha512"
+  ],
   "logs": []
 }
