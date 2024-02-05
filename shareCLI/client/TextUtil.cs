@@ -1,11 +1,10 @@
-
-// testing
+// TextUtil mk 2
 public class TextUtil
 {
     private static Dictionary<int, (ConsoleColor, ConsoleColor)> Theme = new(){
     {0 , (ConsoleColor.Gray , ConsoleColor.Black)},
-    {1 , (ConsoleColor.Black , ConsoleColor.DarkBlue)},
-    {2 , (ConsoleColor.White , ConsoleColor.Black)},
+    {1 , (ConsoleColor.White , ConsoleColor.Black)},
+    {2 , (ConsoleColor.Black , ConsoleColor.DarkBlue)},
     {3 , (ConsoleColor.Red , ConsoleColor.Black)},
     {4 , (ConsoleColor.Black , ConsoleColor.DarkRed)},
     {5 , (ConsoleColor.Green , ConsoleColor.Black)},
@@ -85,12 +84,14 @@ public class TextUtil
     // format :- "[0]"message"[\] 
     public static void WriteFormatParsed(List<string> collection)
     {
-
+        foreach (var item in collection)
+        {
+            WriteFormatParsed(item);
+        }
     }
     public static void WriteFormatParsed(string message)
     {
         List<(int, string)> collection = Parser(message);
-        // Console.WriteLine("The length of collection is :-" + collection.Count);
         foreach (var item in collection)
         {
             Write(item.Item2, item.Item1);
@@ -118,7 +119,9 @@ public class TextUtil
                 startIndex = i + 3;
             }
         }
-
+        if(startIndex == 0){
+            result.Add((currentTheme, message));
+        }
         bool IsStartingTag(int index) => message[index] == '[' && message[index + 2] == ']' && IsValidTheme(index);
         bool IsEndingTag(int index) => message[index] == '[' && message[index + 2] == ']' && message[index + 1] == '/';
         bool IsValidTheme(int index) => message[index + 1] != '/' && message[index + 1] != ' ';

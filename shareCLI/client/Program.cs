@@ -75,141 +75,56 @@ Server:
     Send Command ---> _________________
     \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
+[info page]
+    \\\\\\\\\\\--server name   \\\\\\\\\\\\\ 
+    \\--Total Rooms        --Total clients\\
+    \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+    \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+    \\                                    \\
+    \\Server Status : Active              \\
+    \\Server Address: 000.000.000.000     \\
+    \\Server Uptime: 34min 21s            \\
+    \\                                    \\
+    \\                                    \\
+    \\                                    \\
+    \\                                    \\
+    \\                                    \\
+    \\                                    \\
+    \\send :hp to get help                \\
+    \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+    --> [Command Box]
+    \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 */
 static async Task Main()
 {
-    ConsoleUtils.ConsoleWindow cw = new(1, 1, 35, 5);
-    Console.Clear();
-    cw.BorderChar = '/';
-    cw.BorderSize = 2;
-    cw.Header = "Chat Room 1 45552";
-    cw.AddText("Hello");
-    cw.AddText("World");
+    ConsoleUtils.ConsoleWindowManager infoPage = new();
+    ConsoleUtils.ConsoleWindow serverInfoWindow = new(0, 0, 50, 3);
+    serverInfoWindow.Header = "Server Name";
+    serverInfoWindow.AddText("[2]Total Rooms[/]" + "          " + "[2]Total Clients[/]");
+    ConsoleUtils.ConsoleWindow serverInfoExtra = new(0, 3, 50, 13);
+    // serverInfoExtra.AddParsedText("||||||");
+    serverInfoExtra.AddText("[3]Server Status[/]" + " : [1]Active[/]");
+    serverInfoExtra.AddText("[3]Server Address[/]" + " : [1]000.000.000.000[/]");
+    serverInfoExtra.AddText("[3]Server Uptime[/]" + " : [1]34min 21s[/]");
+    // serverInfoExtra.AddText("send :hp to get help");
+    serverInfoExtra.AddText("Hello World!!");
+    infoPage.AddWindow(ref serverInfoWindow);
+    infoPage.AddWindow(ref serverInfoExtra);
 
-    ConsoleUtils.ConsoleWindow cw2 = new(1,6,35,5);
-    cw2.BorderChar = '*';
-    cw2.BorderSize = 2;
-    cw2.Header = "Chat Room 2 45552";
-    cw2.AddText("[0]Hello[/] [3]World[/]");
-    cw2.AddText("[1]World[/]");
+    ConsoleUtils.ConsoleWindow inputPanel = new(0, 16, 50, 3);
+    inputPanel.AddText("[3]Command:->[/]");
 
-    cw.DrawWindow();
-    cw.DrawText();
-    cw2.DrawWindow();
-    cw2.DrawText();
-    cw2.DrawWindow();
-    cw2.DrawText();
-    Console.ReadKey();
+    infoPage.AddWindow(ref inputPanel);
+
+    infoPage.DrawWindows();
+
+    while (true)
+    {
+        string input = Console.ReadLine();
+        serverInfoExtra.AddText(input);
+        infoPage.DrawWindows();
+    }
+    Console.ReadLine();
 }
 
 Main().Wait();
-
-
-
-public class ConsoleUtils()
-{
-    public class ConsoleWindow(int xpos, int ypos, int width, int height)
-    {
-        //window will have a border and a text area;
-        private readonly int xpos = xpos;
-        private readonly int ypos = ypos;
-        private readonly int width = width;
-        private readonly int height = height;
-        private readonly int textSlots = height - 2;
-        private List<string> textBuffer = [];
-        private int offset = 0;
-        public void AddText(string text)
-        {
-            textBuffer.Add(text);
-        }
-        public void ClearText()
-        {
-            textBuffer.Clear();
-        }
-        public void ReplaceBuffer(List<string> buffer)
-        {
-            textBuffer = buffer;
-        }
-        public void ScrollBuffer(int direction)
-        {
-            if (direction == 1)
-            {
-                if (offset < textBuffer.Count - textSlots)
-                {
-                    offset++;
-                }
-            }
-            else if (direction == -1)
-            {
-                if (offset > 0)
-                {
-                    offset--;
-                }
-            }
-        }
-        private int borderSize = 2;
-        public int BorderSize
-        {
-            get => borderSize;
-            set
-            {
-                if (value > 0 && value < 5)
-                {
-                    borderSize = value;
-                }
-            }
-        }
-        private char borderChar = '/';
-        public char BorderChar
-        {
-            get => borderChar;
-            set
-            {
-                if (value != default(char))
-                {
-                    borderChar = value;
-                }
-            }
-        }
-        private string header = "";
-        public string Header
-        {
-            get => header;
-            set
-            {
-                if (value != default(string))
-                {
-                    header = value;
-                }
-            }
-        }
-        public void DrawWindow()
-        {
-            Console.SetCursorPosition(xpos, ypos);
-            int halfwidth = (width + 1) / 2 - (header.Length + 1) / 2;
-            string topBorder = new string(borderChar, halfwidth) + header + new string(borderChar, halfwidth);
-            Console.WriteLine(topBorder);
-            for (int i = 1; i < height; i++)
-            {
-                Console.SetCursorPosition(xpos, ypos + i);
-                Console.WriteLine(new string(borderChar, borderSize) + new string(' ', width - 2 * borderSize) + new string(borderChar, borderSize));
-            }
-            Console.SetCursorPosition(xpos, ypos + height);
-            Console.WriteLine(new string(borderChar, width));
-            Console.SetCursorPosition(0, 0);
-        }
-        public void DrawText()
-        {
-            for (int i = 0; i < textSlots && i < textBuffer.Count; i++)
-            {
-                Console.SetCursorPosition(xpos + borderSize, ypos + borderSize + i);
-                TextUtil.WriteFormatParsed(textBuffer[i + offset]);
-                // Console.WriteLine(textBuffer[i + offset]);
-            }
-        }
-
-
-    }
-
-
-}
